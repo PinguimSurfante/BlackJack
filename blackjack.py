@@ -29,13 +29,32 @@ def cards():
                 print(f"Your Final Hands: {player1}, current score: {calculador_de_pontos(player1)}")
                 print(f"Computer's card: {computer}, current score: {calculador_de_pontos(computer)}")
                 if calculador_de_pontos(computer) > 21:
-                    return "You won"
+                    print("You won")
+                    user_input = input("Do you wanna play BlackJack, y or n: ")
+                    if user_input == 'y' or user_input == 'yes':
+                        break
+                    else: 
+                        return "Thanks for playing"
                 elif calculador_de_pontos(player1) <= 21 and calculador_de_pontos(player1) > calculador_de_pontos(computer):
-                    return "You won"
+                    print("You won")
+                    user_input = input("Do you wanna play BlackJack, y or n: ")
+                    if user_input == 'y' or user_input == 'yes':
+                        break
+                    else: 
+                        return "Thanks for playing"
                 elif calculador_de_pontos(player1) == calculador_de_pontos(computer):
-                    return "Draw"
+                    print("Draw")
+                    user_input = input("Do you wanna play BlackJack, y or n: ")
+                    if user_input == 'y' or user_input == 'yes':
+                        break
+                    else: 
+                        return "Thanks for playing"
                 else:
-                    return "You lose"
+                    print("You lost")
+                    user_input = input("Do you wanna play BlackJack, y or n: ")
+                    if user_input == 'y' or user_input == 'yes':
+                        break
+                    else: return "Thanks for playing"
                 
             gerador_carta(player1)
             gerador_carta(computer)
